@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
 import SplitType from "split-type";
 
-const Section2 = ({ isActive }) => {
+const Section2 = ({ isActive, moveSectionDown }) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -75,6 +75,11 @@ const Section2 = ({ isActive }) => {
           they interact with my creations.
         </p>
       </div>
+      <img
+        onClick={() => moveSectionDown()}
+        className="down-icon"
+        src="/images/home/down-icon.png"
+      />
     </div>
   );
 };

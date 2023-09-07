@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
-const Section1 = ({ isActive }) => {
+const Section1 = ({ isActive, moveSectionDown }) => {
   const [gsapLoaded, setGsapLoaded] = useState(false);
   useEffect(() => {
     import("gsap").then(({ gsap }) => {
@@ -12,6 +12,8 @@ const Section1 = ({ isActive }) => {
       const { chars: textChars } = new SplitType(".home .section-1 p", {
         types: "words, chars",
       });
+      gsap.fromTo(".home .section-1 .left", { x: -200 }, { x: 0 }).duration(1);
+      gsap.fromTo(".home .section-1 .right", { x: 200 }, { x: 0 }).duration(1);
       gsap.fromTo(
         titleChars,
         {
@@ -23,6 +25,7 @@ const Section1 = ({ isActive }) => {
           opacity: 1,
           stagger: 0.05,
           duration: 2,
+          delay: 0.2,
           ease: "power4.out",
         }
       );
@@ -36,6 +39,7 @@ const Section1 = ({ isActive }) => {
           y: 0,
           opacity: 1,
           stagger: 0.01,
+          delay: 0.2,
           duration: 0.5,
           ease: "power4.out",
         }
@@ -51,18 +55,17 @@ const Section1 = ({ isActive }) => {
       gsap.to(".home .section-1 .right", { x: 200 }).duration(1);
     }
   }, [isActive]);
-
   return (
-    <div className="section-1">
+    <div style={{ opacity: gsapLoaded ? 1 : 0 }} className="section-1">
       <div className="left">
         <div className="wrapper">
           <div className="title-wrapper">
-            <h1 style={{ opacity: gsapLoaded ? 1 : 0 }}>
+            <h1>
               <span>HAMZA</span> <span>DEV</span>
             </h1>
             <img src="/images/home/leaf.png" alt="" />
           </div>
-          <p style={{ opacity: gsapLoaded ? 1 : 0 }}>
+          <p>
             I am an aspiring developer who is in love with the process of
             turning creative ideas into tangilble solutions.
           </p>
@@ -71,6 +74,7 @@ const Section1 = ({ isActive }) => {
       <div className="right">
         <img src="/images/home/1.jpg" alt="" />
       </div>
+      <img onClick={()=>moveSectionDown()} className="down-icon" src="/images/home/down-icon.png" />
     </div>
   );
 };

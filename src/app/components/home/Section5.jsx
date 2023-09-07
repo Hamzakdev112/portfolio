@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
-const Section3 = ({ isActive, moveSectionDown }) => {
+import Link from "next/link";
+const Section5 = ({ isActive }) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -10,10 +11,10 @@ const Section3 = ({ isActive, moveSectionDown }) => {
   useEffect(() => {
     if (inView) {
       import("gsap").then(({ gsap }) => {
-        const { chars: titleChars } = new SplitType(".home .section-3 h1", {
+        const { chars: titleChars } = new SplitType(".home .section-5 h1", {
           types: "words, chars",
         });
-        const { chars: textChars } = new SplitType(".home .section-3 p", {
+        const { chars: textChars } = new SplitType(".home .section-5 p", {
           types: "words, chars",
         });
         setGsapLoaded(true);
@@ -51,37 +52,27 @@ const Section3 = ({ isActive, moveSectionDown }) => {
 
   useEffect(() => {
     if (isActive) {
-      gsap.to(".home .section-3 .left", { x: 0 }).duration(1);
-      gsap.to(".home .section-3 .right", { x: 0 }).duration(1);
+      gsap.to(".home .section-5 .left", { x: 0 }).duration(1);
+      gsap.to(".home .section-5 .right", { x: 0 }).duration(1);
     } else {
-      gsap.to(".home .section-3 .left", { x: -200 }).duration(1);
-      gsap.to(".home .section-3 .right", { x: 200 }).duration(1);
+      gsap.to(".home .section-5 .left", { x: -200 }).duration(1);
+      gsap.to(".home .section-5 .right", { x: 200 }).duration(1);
     }
   }, [isActive]);
 
   return (
-    <div className="section-3">
+    <div className="section-5">
       <div className="left">
         <h1 style={{ opacity: gsapLoaded ? 1 : 0 }} ref={ref}>
-          Completely Self Taught
+          WANNA EXPLORE SOME OF MY WORK?
         </h1>
-        <p style={{ opacity: gsapLoaded ? 1 : 0 }}>
-          I started my journey as a self-taught programmer, armed with nothing
-          but a non-CS background and a burning passion for coding. The path
-          ahead seemed daunting, but I was undeterred. With sheer determination
-          and a hunger for knowledge, I charted my course into the industry.
-        </p>
+        <Link href='/work'>EXPLORE</Link>
       </div>
       <div className="right">
-        <img src="/images/home/3.png" alt="" />
+        <img src="/images/home/5.webp" alt="" />
       </div>
-      <img
-        onClick={() => moveSectionDown()}
-        className="down-icon"
-        src="/images/home/down-icon.png"
-      />
     </div>
   );
 };
 
-export default Section3;
+export default Section5;

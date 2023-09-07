@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
 import SplitType from "split-type";
 
-const Section4 = ({ isActive }) => {
+const Section4 = ({ isActive, moveSectionDown }) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -72,10 +72,15 @@ const Section4 = ({ isActive }) => {
           I began my math journey with no formal background, driven purely by
           passion. Despite the challenges, my enthusiasm propelled me forward.
           Today, I revel in the world of mathematics, solving complex problems
-          and exploring its beauty. Join me in my mathematical adventure through
-          my portfolio!
+          and exploring its beauty. Join me in m y mathematical adventure
+          through my portfolio!
         </p>
       </div>
+      <img
+        onClick={() => moveSectionDown()}
+        className="down-icon"
+        src="/images/home/down-icon.png"
+      />
     </div>
   );
 };
