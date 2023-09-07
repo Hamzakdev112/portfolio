@@ -18,7 +18,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link href="/">
-            <span data-hover="Go">Portfolio</span>
+            <span data-hover="Go">Contact</span>
           </Link>
         </li>
       </ul>

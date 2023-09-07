@@ -4,27 +4,34 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import Section1 from "./components/home/Section1";
 import { useEffect, useState } from "react";
 import Section2 from "./components/home/Section2";
+import Section3 from "./components/home/Section3";
+
 
 const Page = () => {
   const [activeSection, setActiveSection] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(1001);
-
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [rendered, setRendered] = useState(false);
+  console.log(rendered);
+  const handleWindowResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
   useEffect(() => {
-    const handleWindowResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
+    handleWindowResize();
     window.addEventListener("resize", handleWindowResize);
-
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
+
+
+  
+
   return (
     <div className="home">
       {screenWidth > 1000 ? (
         <ReactFullpage
+          afterRender={() => setRendered(true)}
           beforeLeave={(_, { index }) => setActiveSection(index)}
           scrollingSpeed={1000}
           render={() => {
@@ -36,6 +43,9 @@ const Page = () => {
                 <div className="section">
                   <Section2 isActive={activeSection === 1} />
                 </div>
+                <div className="section">
+                  <Section3 isActive={activeSection === 2} />
+                </div>
               </ReactFullpage.Wrapper>
             );
           }}
@@ -44,6 +54,7 @@ const Page = () => {
         <div>
           <Section1 isActive={true} />
           <Section2 isActive={true} />
+          <Section3 isActive={true} />
         </div>
       )}
     </div>
