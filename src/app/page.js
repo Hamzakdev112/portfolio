@@ -5,6 +5,7 @@ import Section1 from "./components/home/Section1";
 import { useEffect, useState } from "react";
 import Section2 from "./components/home/Section2";
 import Section3 from "./components/home/Section3";
+import Section4 from "./components/home/Section4";
 
 
 const Page = () => {
@@ -46,6 +47,9 @@ const Page = () => {
                 <div className="section">
                   <Section3 isActive={activeSection === 2} />
                 </div>
+                <div className="section">
+                  <Section4 isActive={activeSection === 3} />
+                </div>
               </ReactFullpage.Wrapper>
             );
           }}
@@ -55,6 +59,7 @@ const Page = () => {
           <Section1 isActive={true} />
           <Section2 isActive={true} />
           <Section3 isActive={true} />
+          <Section4 isActive={true} />
         </div>
       )}
     </div>
