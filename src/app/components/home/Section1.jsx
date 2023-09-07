@@ -2,20 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 const Section1 = ({ isActive }) => {
-  const leftRef = useRef();
-  const rightRef = useRef();
-  const titleRef = useRef();
-  const textRef = useRef();
   const [gsapLoaded, setGsapLoaded] = useState(false);
-
   useEffect(() => {
     import("gsap").then(({ gsap }) => {
       setGsapLoaded(true);
-      const { chars: titleChars } = new SplitType(titleRef.current, {
-        types: "chars",
+      const { chars: titleChars } = new SplitType(".home .section-1 h1", {
+        types: "words, chars",
       });
-      const { chars: textChars } = new SplitType(textRef.current, {
-        types: "chars",
+      const { chars: textChars } = new SplitType(".home .section-1 p", {
+        types: "words, chars",
       });
       gsap.fromTo(
         titleChars,
@@ -47,34 +42,33 @@ const Section1 = ({ isActive }) => {
       );
     });
   }, []);
-  const leafRef = useRef();
   useEffect(() => {
     if (isActive) {
-      gsap.to(leftRef.current, { x: 0 }).duration(1);
-      gsap.to(rightRef.current, { x: 0 }).duration(1);
+      gsap.to(".home .section-1 .left", { x: 0 }).duration(1);
+      gsap.to(".home .section-1 .right", { x: 0 }).duration(1);
     } else {
-      gsap.to(leftRef.current, { x: -200 }).duration(1);
-      gsap.to(rightRef.current, { x: 200 }).duration(1);
+      gsap.to(".home .section-1 .left", { x: -200 }).duration(1);
+      gsap.to(".home .section-1 .right", { x: 200 }).duration(1);
     }
   }, [isActive]);
 
   return (
     <div className="section-1">
-      <div ref={leftRef} className="left">
+      <div className="left">
         <div className="wrapper">
           <div className="title-wrapper">
-            <h1 style={{ opacity: gsapLoaded ? 1 : 0 }} ref={titleRef}>
+            <h1 style={{ opacity: gsapLoaded ? 1 : 0 }}>
               <span>HAMZA</span> <span>DEV</span>
             </h1>
-            <img ref={leafRef} src="/images/home/leaf.png" alt="" />
+            <img src="/images/home/leaf.png" alt="" />
           </div>
-          <p style={{ opacity: gsapLoaded ? 1 : 0 }} ref={textRef}>
+          <p style={{ opacity: gsapLoaded ? 1 : 0 }}>
             I am an aspiring developer who is in love with the process of
             turning creative ideas into tangilble solutions.
           </p>
         </div>
       </div>
-      <div ref={rightRef} className="right">
+      <div className="right">
         <img src="/images/home/1.jpg" alt="" />
       </div>
     </div>

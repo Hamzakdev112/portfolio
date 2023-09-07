@@ -4,10 +4,7 @@ import { useInView } from "react-intersection-observer";
 import SplitType from "split-type";
 
 const Section2 = ({ isActive }) => {
-  const leftRef = useRef();
-  const rightRef = useRef();
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
+  const { ref, inView } = useInView({
     threshold: 0,
   });
   const [gsapLoaded, setGsapLoaded] = useState(false);
@@ -15,10 +12,10 @@ const Section2 = ({ isActive }) => {
     if (inView) {
       import("gsap").then(({ gsap }) => {
         const { chars: titleChars } = new SplitType(".home .section-2 h1", {
-          types: "chars",
+          types: "words, chars",
         });
         const { chars: textChars } = new SplitType(".home .section-2 p", {
-          types: "chars",
+          types: "words, chars",
         });
         setGsapLoaded(true);
         gsap.fromTo(
@@ -48,27 +45,26 @@ const Section2 = ({ isActive }) => {
           }
         );
       });
-    }
-    else{
-      setGsapLoaded(false)
+    } else {
+      setGsapLoaded(false);
     }
   }, [inView]);
 
   useLayoutEffect(() => {
     if (isActive) {
-      gsap.to(leftRef.current, { x: 0 }).duration(1);
-      gsap.to(rightRef.current, { x: 0 }).duration(1);
+      gsap.to(".home .section-2 .left", { x: 0 }).duration(1);
+      gsap.to(".home .section-2 .right", { x: 0 }).duration(1);
     } else {
-      gsap.to(leftRef.current, { x: -300 }).duration(1);
-      gsap.to(rightRef.current, { x: 300 }).duration(1);
+      gsap.to(".home .section-2 .left", { x: -300 }).duration(1);
+      gsap.to(".home .section-2 .right", { x: 300 }).duration(1);
     }
   }, [isActive]);
   return (
     <div className="section-2">
-      <div ref={leftRef} className="left">
+      <div className="left">
         <img src="/images/home/2.png" alt="" />
       </div>
-      <div ref={rightRef} className="right">
+      <div className="right">
         <h1 style={{ opacity: gsapLoaded ? 1 : 0 }} ref={ref} className="test">
           Crafting FullStack Magic
         </h1>
