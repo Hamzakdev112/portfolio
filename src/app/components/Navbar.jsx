@@ -8,11 +8,11 @@ const Navbar = () => {
       <ul>
         <li>
           <Link href="/">
-            <span data-hover="Go">About</span>
+            <span data-hover="Go">Home</span>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/work">
             <span data-hover="Go">Portfolio</span>
           </Link>
         </li>
