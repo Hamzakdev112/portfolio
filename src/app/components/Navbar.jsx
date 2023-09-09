@@ -4,25 +4,25 @@ import React from "react";
 const Navbar = () => {
   return (
     <header>
-    <nav>
-      <ul>
-        <li>
-          <Link href="/">
-            <span data-hover="Go">Home</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/work">
-            <span data-hover="Go">Portfolio</span>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <span data-hover="Go">Contact</span>
-          </Link>
-        </li>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/">
+              <span data-hover="Go">Home</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/work">
+              <span data-hover="Go">Portfolio</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/">
+              <span data-hover="Go">Contact</span>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
