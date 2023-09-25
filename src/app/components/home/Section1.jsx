@@ -66,7 +66,7 @@ const Section1 = ({ isActive, moveSectionDown }) => {
             <img src="/images/home/leaf.png" alt="" />
           </div>
           <p>
-            I am an aspiring developer who is in love with the process of
+            I am a self taught developer who is in love with the process of
             turning creative ideas into tangilble solutions.
           </p>
         </div>
@@ -74,7 +74,11 @@ const Section1 = ({ isActive, moveSectionDown }) => {
       <div className="right">
         <img src="/images/home/1.jpg" alt="" />
       </div>
-      <img onClick={()=>moveSectionDown()} className="down-icon" src="/images/home/down-icon.png" />
+      <img
+        onClick={() => moveSectionDown()}
+        className="down-icon"
+        src="/images/home/down-icon.png"
+      />
     </div>
   );
 };

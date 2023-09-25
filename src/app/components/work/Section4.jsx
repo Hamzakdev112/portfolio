@@ -13,7 +13,7 @@ const Section4 = () => {
       </div>
       <div className="right">
         <img src="/images/work/fuentes-tech.png" alt="" />
-        <a href="https://flavor-nu.vercel.app" target="_blank">
+        <a href="https://fuentes-tech-wmtv.vercel.app" target="_blank">
           LIVE
         </a>
       </div>

@@ -12,7 +12,10 @@ const Section5 = () => {
           <h2>YOUTUBE CLONE</h2>
           <h3>Personal Project</h3>
         </div>
-        <p>A small youtube clone with account and upload functionality.</p>
+        <p>
+          A small youtube clone with account and upload functionality. Ignore
+          the videos :P
+        </p>
       </div>
     </div>
   );

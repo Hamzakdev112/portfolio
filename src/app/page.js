@@ -12,11 +12,12 @@ const Page = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
   const [rendered, setRendered] = useState(false);
-  console.log(rendered);
   const handleWindowResize = () => {
     setScreenWidth(window.innerWidth);
   };
   useEffect(() => {
+    // window.scrollTo(0, 0)
+    console.clear()
     handleWindowResize();
     window.addEventListener("resize", handleWindowResize);
     return () => {
@@ -32,6 +33,7 @@ const Page = () => {
             afterRender={() => setRendered(true)}
             beforeLeave={(_, { index }) => setActiveSection(index)}
             scrollingSpeed={1000}
+            scrollBar
             render={({ state, fullpageApi }) => {
               return (
                 <ReactFullpage.Wrapper>

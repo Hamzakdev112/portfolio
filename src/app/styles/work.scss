@@ -1,5 +1,9 @@
 .work {
     margin-top: 150px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
     .section-1 {
         color: white;
         text-align: center;
@@ -22,8 +26,6 @@
         transition: 0.3s ease all;
         padding: 0px 70px;
         gap: 50px;
-        margin-top: 50px;
-
         .left {
             width: 50%;
             color: white;
@@ -101,7 +103,6 @@
         .section-2 {
             flex-direction: column;
             padding: 0px 20px;
-            margin-top: 100px;
             font-size: 14px;
             gap: 50px;
             height: 100%;
@@ -125,8 +126,6 @@
         transition: 0.3s ease all;
         padding: 0px 70px;
         gap: 50px;
-        margin-top: 50px;
-
         .left {
             width: 50%;
             display: flex;
@@ -204,7 +203,6 @@
         .section-3 {
             flex-direction: column-reverse;
             padding: 0px 20px;
-            margin-top: 100px;
             font-size: 14px;
             gap: 50px;
             height: 100%;
@@ -228,8 +226,6 @@
         transition: 0.3s ease all;
         padding: 0px 70px;
         gap: 50px;
-        margin-top: 50px;
-
         .left {
             width: 50%;
             color: white;
@@ -307,7 +303,6 @@
         .section-4 {
             flex-direction: column;
             padding: 0px 20px;
-            margin-top: 100px;
             font-size: 14px;
             gap: 50px;
             height: 100%;
@@ -331,8 +326,6 @@
         transition: 0.3s ease all;
         padding: 0px 70px;
         gap: 50px;
-        margin-top: 50px;
-
         .left {
             width: 50%;
             display: flex;
@@ -410,7 +403,6 @@
         .section-5 {
             flex-direction: column-reverse;
             padding: 0px 20px;
-            margin-top: 100px;
             font-size: 14px;
             gap: 50px;
             height: 100%;

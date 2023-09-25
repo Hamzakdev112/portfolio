@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import SplitType from "split-type";
 
@@ -24,7 +24,7 @@ const Section1 = () => {
         {
           y: 0,
           opacity: 1,
-          stagger: 0.10,
+          stagger: 0.1,
           duration: 2,
           delay: 0.2,
           ease: "power4.out",
@@ -45,6 +45,7 @@ const Section1 = () => {
           ease: "power4.out",
         }
       );
+      console.clear();
     });
   }, []);
   return (
@@ -52,7 +53,7 @@ const Section1 = () => {
       <h1>WORK</h1>
       <p>
         As part of my role within the companies (Social Hippos and Immersive
-        Tech Labs), I had the privilege of working on these project.{" "}
+        Tech Labs), I had the privilege of working on these projects.
       </p>
     </div>
   );

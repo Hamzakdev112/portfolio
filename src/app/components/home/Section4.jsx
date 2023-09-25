@@ -72,7 +72,7 @@ const Section4 = ({ isActive, moveSectionDown }) => {
           I began my math journey with no formal background, driven purely by
           passion. Despite the challenges, my enthusiasm propelled me forward.
           Today, I revel in the world of mathematics, solving complex problems
-          and exploring its beauty. Join me in m y mathematical adventure
+          and exploring its beauty. Join me in my mathematical adventure
           through my portfolio!
         </p>
       </div>
