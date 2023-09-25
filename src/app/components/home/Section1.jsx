@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
-const Section1 = ({ isActive, moveSectionDown }) => {
+const Section1 = ({ isActive, moveSectionDown}) => {
   const [gsapLoaded, setGsapLoaded] = useState(false);
   useEffect(() => {
     import("gsap").then(({ gsap }) => {

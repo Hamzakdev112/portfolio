@@ -6,6 +6,7 @@ import Section4 from "../components/work/Section4";
 import Section5 from "../components/work/Section5";
 import Section6 from "../components/work/Section6";
 import Section7 from "../components/work/Section7";
+import LastSection from "../components/work/LastSection";
 
 export const metadata = {
   title: "Work - Hamza Dev",
@@ -23,6 +24,7 @@ const page = () => {
       <Section5 />
       <Section6 />
       <Section7 />
+      <LastSection />
     </div>
   );
 };

@@ -17,7 +17,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="https://www.linkedin.com/in/devhamzak/">
               <span data-hover="Go">Contact</span>
             </Link>
           </li>

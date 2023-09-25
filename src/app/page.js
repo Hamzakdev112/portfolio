@@ -11,12 +11,13 @@ import Section5 from "./components/home/Section5";
 const Page = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
-  const [rendered, setRendered] = useState(false);
   const handleWindowResize = () => {
     setScreenWidth(window.innerWidth);
   };
   useEffect(() => {
-    // window.scrollTo(0, 0)
+    window.scrollTo({
+      top:0
+    })
     console.clear()
     handleWindowResize();
     window.addEventListener("resize", handleWindowResize);
@@ -30,7 +31,6 @@ const Page = () => {
       {screenWidth > 1000 ? (
         <>
           <ReactFullpage
-            afterRender={() => setRendered(true)}
             beforeLeave={(_, { index }) => setActiveSection(index)}
             scrollingSpeed={1000}
             scrollBar

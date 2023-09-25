@@ -418,4 +418,26 @@
             }
         }
     }
+    .last-section{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: white;
+        align-items: center;
+        a {
+            background-color: white;
+            width: fit-content;
+            padding: 5px 50px;
+            transition: 0.3s ease all;
+            color: black;
+            text-decoration: none;
+            transition: 0.3s ease all;
+            filter: drop-shadow(4px 4px 0px #C8BDFF);
+            cursor: pointer;
+        }
+
+        a:hover {
+            filter: drop-shadow(0px 0px 0px #C8BDFF);
+        }
+    }
 }
