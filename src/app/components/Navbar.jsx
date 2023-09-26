@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link href="/">
+            <Link href="/"> 
               <span data-hover="Go">Home</span>
             </Link>
           </li>
