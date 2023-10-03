@@ -13,7 +13,7 @@ const Section2 = () => {
       </div>
       <div className="right">
         <img src="/images/work/flavor.webp" alt="" />
-        <a href="https://flavor-nu.vercel.app" target="_blank">
+        <a href="https://flavor.works" target="_blank">
           LIVE
         </a>
       </div>
