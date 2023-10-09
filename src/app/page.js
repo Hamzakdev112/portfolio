@@ -15,6 +15,7 @@ const Page = () => {
     setScreenWidth(window.innerWidth);
   };
   useEffect(() => {
+    document.querySelector('.bg-video').playbackRate = 0.7
     window.scrollTo({
       top:0
     })
@@ -28,6 +29,9 @@ const Page = () => {
 
   return (
     <div className="home">
+         <video className="bg-video" autoPlay muted loop src='/hero.mp4'>
+        <source  src='/hero.mp4' type='video/mp4'  />
+      </video>
       {screenWidth > 1000 ? (
         <>
           <ReactFullpage

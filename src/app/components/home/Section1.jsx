@@ -72,7 +72,7 @@ const Section1 = ({ isActive, moveSectionDown}) => {
         </div>
       </div>
       <div className="right">
-        <img src="/images/home/1.jpg" alt="" />
+        <img src="/images/home/1.png" alt="" />
       </div>
       <img
         onClick={() => moveSectionDown()}
