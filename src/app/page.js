@@ -17,7 +17,7 @@ const Page = () => {
   };
   useEffect(() => {
     setLoaded(true)
-    document.querySelector('.bg-video').playbackRate = 0.7
+    setTimeout(()=> document.querySelector('.bg-video').playbackRate = 0.7, 2000)
     window.scrollTo({
       top:0
     })
