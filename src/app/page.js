@@ -11,10 +11,12 @@ import Section5 from "./components/home/Section5";
 const Page = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
+  const [loaded, setLoaded] = useState(false);
   const handleWindowResize = () => {
     setScreenWidth(window.innerWidth);
   };
   useEffect(() => {
+    setLoaded(true)
     document.querySelector('.bg-video').playbackRate = 0.7
     window.scrollTo({
       top:0
@@ -29,9 +31,12 @@ const Page = () => {
 
   return (
     <div className="home">
-         <video className="bg-video" autoPlay muted loop src='/hero.mp4'>
+      {
+        loaded && 
+        <video className="bg-video" autoPlay muted loop src='/hero.mp4'>
         <source  src='/hero.mp4' type='video/mp4'  />
       </video>
+        }
       {screenWidth > 1000 ? (
         <>
           <ReactFullpage
